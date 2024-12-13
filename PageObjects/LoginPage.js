@@ -7,9 +7,11 @@ class LoginPage extends BasePage {
     this.signUpEmailField = `//input[@data-qa="signup-email"]`;
     this.signUpButton = `//button[@data-qa="signup-button"]`;
   }
+
   setSignUpName(name) {
     cy.xpath(this.signUpUserNameField).type(name);
   }
+
   setSignUpEmail(email) {
     cy.xpath(this.signUpEmailField).type(email);
   }
