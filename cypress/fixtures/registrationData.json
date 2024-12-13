@@ -1,8 +1,9 @@
 {
   "title": "Mr.",
+  "name": "John",
   "firstName": "John",
   "lastName": "Doe",
-  "email": "john.doe@email.com",
+  "email": "john.doe0001@email.com",
   "password": "your_password",
   "dateOfbirth": "15/04/1990",
   "newsletterSubscription": true,
