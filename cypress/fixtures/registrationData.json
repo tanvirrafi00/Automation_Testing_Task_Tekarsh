@@ -1,0 +1,16 @@
+{
+  "title": "Mr.",
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@email.com",
+  "password": "your_password",
+  "dateOfbirth": "15/04/1990",
+  "newsletterSubscription": true,
+  "addressLine1": "123 Main Street",
+  "addressLine2": "Apt 4B",
+  "city": "New York",
+  "state": "NY",
+  "zipCode": "10001",
+  "country": "USA",
+  "mobileNumber": "+1234567890"
+}
