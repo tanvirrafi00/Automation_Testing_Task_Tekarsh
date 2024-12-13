@@ -5,13 +5,16 @@
   "lastName": "Doe",
   "email": "john.doe0001@email.com",
   "password": "your_password",
-  "dateOfbirth": "15/04/1990",
+  "birthDay": "15",
+  "birthMonth": "4",
+  "birthYear": "1990",
   "newsletterSubscription": true,
+  "companyName": "spacex",
   "addressLine1": "123 Main Street",
   "addressLine2": "Apt 4B",
   "city": "New York",
   "state": "NY",
   "zipCode": "10001",
-  "country": "USA",
+  "country": "United States",
   "mobileNumber": "+1234567890"
 }
