@@ -1,3 +1,4 @@
+// import { assert } from "chai";
 import BasePage from "./BasePage.js";
 
 class CreateAccountPage extends BasePage {
@@ -22,6 +23,8 @@ class CreateAccountPage extends BasePage {
     this.zipcodeField = `//input[@id="zipcode"]`;
     this.phoneNumberField = `//input[@id="mobile_number"]`;
     this.createAccountButton = `//button[@data-qa="create-account"]`;
+    this.accountCreationMessage = `//h2[@class="title text-center"]`;
+    this.continueButton = `//a[@data-qa="continue-button"]`;
   }
 
   fillRegistrationForm(data) {
@@ -46,6 +49,17 @@ class CreateAccountPage extends BasePage {
 
   clickCreateAccountButton() {
     cy.xpath(this.createAccountButton).click();
+  }
+
+  checkAccountCreationMessage(message) {
+    cy.log(message);
+    cy.xpath(this.accountCreationMessage).then((el) => {
+      assert.strictEqual(el.text(), message);
+    });
+  }
+
+  clickContinueButton() {
+    cy.xpath(this.continueButton).click();
   }
 }
 
