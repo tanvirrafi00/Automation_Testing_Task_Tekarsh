@@ -7,7 +7,7 @@ class ContactUsPage extends BasePage {
     this.emailField = `//input[@data-qa="email"]`;
     this.subjectField = `//input[@data-qa="subject"]`;
     this.messageField = `//textarea[@data-qa="message"]`;
-    this.uploadFile = `//input[@name="upload_file"]`;
+    this.uploadFileInput = `//input[@name="upload_file"]`;
     this.submitButton = `//input[@class="btn btn-primary pull-left submit_form"]`;
     this.contactSuccessMessage = `//div[@class="status alert alert-success"]`;
   }
@@ -20,7 +20,13 @@ class ContactUsPage extends BasePage {
   }
 
   uploadFile(filePath) {
-    cy.xpath(this.uploadFile).attachFile(filePath);
+    cy.xpath(this.uploadFileInput).attachFile(filePath);
+  }
+
+  isFileUploaded(filePath) {
+    const fileName = filePath.split("/").pop();
+    const expectedFilePath = `C:\\fakepath\\${fileName}`;
+    cy.xpath(this.uploadFileInput).should("have.value", expectedFilePath);
   }
 
   clickSubmitButton() {
