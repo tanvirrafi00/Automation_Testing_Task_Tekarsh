@@ -1,0 +1,4 @@
+{
+  "inludedBrandList": ["Polo", "Babyhug", "Biba"],
+  "excludedBrandList": ["Heineken", "BMW", "Razor"]
+}
