@@ -1,4 +1,4 @@
-import categoryProductPage from "../../PageObjects/categoryProductPage.js";
+import CategoryProductPage from "../../PageObjects/categoryProductPage.js";
 import CheckOutPage from "../../PageObjects/CheckOutPage.js";
 import ContactUsPage from "../../PageObjects/ContactUsPage.js";
 import CreateAccountPage from "../../PageObjects/CreateAccountPage.js";
@@ -9,7 +9,7 @@ import PaymentDonePage from "../../PageObjects/PaymentDonePage.js";
 import ProductDetailsPage from "../../PageObjects/ProductDetailsPage.js";
 import ViewCartPage from "../../PageObjects/ViewCartPage.js";
 
-describe("TS:Checkout and contact form submission", () => {
+describe("TS:UI And API Testing", () => {
   let registrationData, messageData, paymentDetails, navigationTextData, contactUsData;
   const filePath = "upload/demo.txt";
 
@@ -53,8 +53,8 @@ describe("TS:Checkout and contact form submission", () => {
     HomePage.clickJeans();
 
     //View and Update Product:
-    categoryProductPage.isPageOpened();
-    categoryProductPage.clickViewProduct();
+    CategoryProductPage.isPageOpened();
+    CategoryProductPage.clickViewProduct();
     ProductDetailsPage.isPageOpened();
     ProductDetailsPage.setProductQuantity(2);
     ProductDetailsPage.clickAddtoCart();
