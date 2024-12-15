@@ -52,10 +52,7 @@ class CreateAccountPage extends BasePage {
   }
 
   checkAccountCreationMessage(message) {
-    cy.log(message);
-    cy.xpath(this.accountCreationMessage).then((el) => {
-      assert.strictEqual(el.text(), message);
-    });
+    cy.xpath(this.accountCreationMessage).should("have.text", message);
   }
 
   clickContinueButton() {
