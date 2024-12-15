@@ -1,3 +1,5 @@
 {
-  "accountCreatedMessage": "Account Created!"
+  "accountCreatedMessage": "Account Created!",
+  "orderPlace": "Congratulations! Your order has been confirmed!",
+  "contactSuccessMessage": "Success! Your details have been submitted successfully."
 }
