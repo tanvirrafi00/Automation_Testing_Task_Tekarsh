@@ -18,6 +18,23 @@ Ensure the following are installed:
    cd Automation_Testing_Task_Tekarsh
    ```
 3. Install the dependencies:
+
    ```bash
    npm install
    ```
+
+   ### Running Tests
+
+   To run the tests, you can use Cypress in the terminal:
+
+1.Without headless
+
+```bash
+npx cypress run
+```
+
+2. With Headed
+
+```bash
+npx cypress run --headed
+```
