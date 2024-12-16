@@ -27,14 +27,14 @@ Ensure the following are installed:
 
    To run the tests, you can use Cypress in the terminal:
 
-1.Without headless
+4. Headless
 
-```bash
-npx cypress run
-```
+   ```bash
+   npx cypress run
+   ```
 
-2. With Headed
+5. With Headed
 
-```bash
-npx cypress run --headed
-```
+   ```bash
+   npx cypress run --headed
+   ```
