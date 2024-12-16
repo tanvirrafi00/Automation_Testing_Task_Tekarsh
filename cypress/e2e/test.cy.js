@@ -8,9 +8,11 @@ import PayemntPage from "../../PageObjects/PayemntPage.js";
 import PaymentDonePage from "../../PageObjects/PaymentDonePage.js";
 import ProductDetailsPage from "../../PageObjects/ProductDetailsPage.js";
 import ViewCartPage from "../../PageObjects/ViewCartPage.js";
+import ENDPOINTS from "../constant/endpoints.js";
 
 describe("TS:UI And API Testing", () => {
   let registrationData, messageData, paymentDetails, navigationTextData, contactUsData;
+  let brandListData;
   const filePath = "upload/demo.txt";
 
   before(() => {
@@ -32,6 +34,10 @@ describe("TS:UI And API Testing", () => {
 
     cy.fixture("contactUsData.json").then((data) => {
       contactUsData = data;
+    });
+
+    cy.fixture("brandListData.json").then((data) => {
+      brandListData = data;
     });
   });
 
@@ -82,5 +88,31 @@ describe("TS:UI And API Testing", () => {
     ContactUsPage.clickSubmitButton();
     ContactUsPage.pressOkToProceed();
     ContactUsPage.checkContactSuccessMessage(messageData.contactSuccessMessage);
+  });
+
+  it("TC-001: Validate Brand List", () => {
+    cy.request(ENDPOINTS.brandList).then((response) => {
+      expect(response.status).to.eq(200);
+      const responseBody = typeof response.body === "string" ? JSON.parse(response.body) : response.body;
+      const brandsList = responseBody.brands.map((brand) => brand.brand);
+      expect(brandsList).to.include.members(brandListData.inludedBrandList);
+      expect(brandsList).to.not.include.members(brandListData.excludedBrandList);
+    });
+  });
+
+  it("TC-002:Verify User Login", () => {
+    cy.request({
+      method: "POST",
+      url: ENDPOINTS.verrifyLogin,
+      form: true,
+      body: {
+        email: registrationData.email,
+        password: registrationData.password,
+      },
+    }).then((response) => {
+      expect(response.status).to.eq(200);
+      let responseBody = JSON.parse(response.body);
+      expect(responseBody.message).to.equal("User exists!");
+    });
   });
 });
