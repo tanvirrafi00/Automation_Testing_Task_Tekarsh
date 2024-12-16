@@ -1,11 +1,8 @@
 # Automation_Testing_Task_Tekarsh
 
-# Prerequisites
+## 📋 Prerequisites
 
-Make sure you have the following installed on your system:
+Ensure the following are installed:
 
-Node.js (version 14 or later)
-
-npm (comes with Node.js)
-
-You can check the installed versions using:
+- **Node.js** (version 14 or later)
+- **npm**
